@@ -2,22 +2,18 @@
 
 #
 # Description: switch DNS profile quickly
-# Author: kodango <dangoakachan@foxmail.com>
-#
 
 # DNS profiles
 # profile name::dns servers
 DNS_PROFILES=$(cat <<EOF
 Default DNS::221.130.33.52 221.130.33.60
 rt DSN::192.168.123.1 223.5.5.5
-t252 DNS::192.168.10.252 223.5.5.5
 Ali Public DNS::223.5.5.5 223.6.6.6
 114 Public DNS::114.114.114.114 114.114.115.115
 gl Public DNS::8.8.8.8 8.8.4.4
 dx Public DNS::219.141.136.10 219.141.140.10
 bd Public DNS::180.76.76.76 8.8.4.4
 one Public DNS::114.215.126.16 42.236.82.22
-Opener DNS::208.67.222.222 208.67.220.220
 EOF
 )
 

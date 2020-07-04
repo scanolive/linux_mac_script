@@ -1,9 +1,12 @@
 #!/bin/bash
 
+#################################################
 #
-# Description: switch DNS profile quickly
-# Author: kodango <dangoakachan@foxmail.com>
-#
+#   File Name: mac_dns.sh
+#   Author: scan
+#   Created Time: Wed Jul 23 12:32:23 2019
+# 
+#################################################
 
 # DNS profiles
 # profile name::dns servers

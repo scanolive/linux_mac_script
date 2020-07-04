@@ -4,7 +4,7 @@
 #
 #   File Name: cut_video.sh
 #   Author: scan
-#   Created Time: Wed Jul 31 10:39:50 2019
+#   Created Time: Wed Jul 29 10:39:50 2019
 # 
 #################################################
 

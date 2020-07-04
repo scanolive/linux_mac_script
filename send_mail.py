@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 #encoding=utf-8
+
+#################################################
+#
+#   File Name: send_mail.py
+#   Author: scan
+#   Created Time: Wed Jul 23 13:59:20 2019
+# 
+#################################################
+
 import sys
 if sys.version_info.major == 2:
     reload(sys)

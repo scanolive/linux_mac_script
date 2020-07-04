@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -- coding: utf-8 --
+
 #################################################
 #
 #   File Name: wechat_getvoice.py
@@ -7,6 +8,7 @@
 #   Created Time: Thu Oct 10 16:14:56 2019
 # 
 #################################################
+
 #import requests,pymysql
 import json,jsonpath,random,re,time,datetime,os,imghdr
 from lxml import etree

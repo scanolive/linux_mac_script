@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#################################################
+#
+#   File Name: mac_tftpd.sh
+#   Author: scan
+#   Created Time: Wed Jul 28 18:43:15 2019
+# 
+#################################################
+
 tftpd_cmd='/usr/libexec/tftpd'
 tftpd_plist='/System/Library/LaunchDaemons/tftp.plist'
 netstat_cmd=`which netstat`

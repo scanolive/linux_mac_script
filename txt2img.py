@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
+
+#################################################
+#
+#   File Name: txt2img.py
+#   Author: scan
+#   Created Time: Wed Jul 21 16:33:10 2019
+# 
+#################################################
+
 import os
 from PIL import Image,ImageFont,ImageDraw
 font = ImageFont.truetype("/Library/Fonts/Arial Narrow.ttf", 9) 

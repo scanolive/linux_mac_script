@@ -1,5 +1,14 @@
 #!/bin/bash
 
+#################################################
+#
+#   File Name: mac_init.sh
+#   Author: scan
+#   Created Time: Wed Jul 24 18:19:56 2019
+# 
+#################################################
+
+
 function check_sip(){
 	if [[ `/usr/bin/csrutil status|grep disabled|wc -l` -eq 0 ]];then
 		echo "sip is enable"

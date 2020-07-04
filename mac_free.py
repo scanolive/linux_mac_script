@@ -1,9 +1,13 @@
 #!/usr/bin/python
-'''
-Created on Jun 1, 2014
 
-@author: jay
-'''
+
+#################################################
+#
+#   File Name: mac_free.py
+#   Author: scan
+#   Created Time: Wed Jul 21 11:35:34 2019
+# 
+#################################################
 
 import subprocess
 import re

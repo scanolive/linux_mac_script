@@ -1,4 +1,15 @@
 #!/usr/bin/env python
+#encoding=utf-8
+
+#################################################
+#
+#   File Name: simple_web.py
+#   Author: scan
+#   Created Time: Wed Jul 27 14:49:37 2019
+# 
+#################################################
+
+
 import os
 import sys
 import time
@@ -13,7 +24,7 @@ from signal import SIGTERM
 
 DATE_STR=datetime.datetime.now().strftime('%Y%m%d%H%M%S')
 HOME_DIR = sys.path[0] + '/'
-LOG_DIR = '/Users/rill/logs/'
+LOG_DIR = '/tmp/'
 if not os.path.isdir(LOG_DIR):
     LOG_DIR = HOME_DIR
 LOG_FILE = LOG_DIR + 'tmp_web.log'

@@ -1,5 +1,14 @@
 #!/bin/bash
 
+#################################################
+#
+#   File Name: mac_ftpd.sh
+#   Author: scan
+#   Created Time: Wed Jul 28 12:12:43 2019
+# 
+#################################################
+
+
 ftpd_cmd='/usr/libexec/ftpd'
 ftpd_plist='/System/Library/LaunchDaemons/ftp.plist'
 ftpd_pam_file='/etc/pam.d/ftpd'

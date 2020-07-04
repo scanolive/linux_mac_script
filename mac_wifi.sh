@@ -1,5 +1,13 @@
 #!/bin/bash
 
+#################################################
+#
+#   File Name: mac_wifi.sh
+#   Author: scan
+#   Created Time: Wed Jul 23 17:35:32 2019
+# 
+#################################################
+
 DEVICE=$(networksetup -listallhardwareports | grep -A 2 -E "AirPort|Wi-Fi" | grep -m 1 -o -e en[0-9]);
 
 if [[ $1 == "off" ]];then

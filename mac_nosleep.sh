@@ -1,5 +1,14 @@
 #!/bin/bash
-#by scan
+
+#################################################
+#
+#   File Name: mac_nosleep.sh
+#   Author: scan
+#   Created Time: Wed Jul 16 19:03:45 2019
+# 
+#################################################
+
+
 if [[ `ps -ef|grep caffeinate|wc -l` -eq 1 ]];then
 	nohup /usr/bin/caffeinate -s > /dev/null  2>&1 &  
 fi

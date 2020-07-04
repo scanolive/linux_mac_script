@@ -1,8 +1,9 @@
 #!/usr/bin/env python
+#encoding=utf-8
 
 #################################################
 #
-#   File Name: sqlite.py
+#   File Name: mac_show_chrome_his.py
 #   Author: scan
 #   Created Time: Wed Mar 13 13:35:49 2019
 # 

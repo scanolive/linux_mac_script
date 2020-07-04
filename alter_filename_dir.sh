@@ -2,7 +2,7 @@
 
 #################################################
 #
-#   File Name: nos_file_dir.sh
+#   File Name: alter_filename_dir.sh
 #   Author: scan
 #   Created Time: Wed Jul 31 10:39:50 2019
 # 

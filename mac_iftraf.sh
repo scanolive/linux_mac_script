@@ -2,13 +2,13 @@
 
 #################################################
 #
-#   File Name: iftraf.sh
+#   File Name: mac_iftraf.sh
 #   Author: scan
-#   Created Time: Wed Jul 31 10:39:50 2019
+#   Created Time: Wed Jul 29 16:29:15 2019
 # 
 #################################################
 
-#by scan
+
 if [ -z $1 ] ;then
 	_interface=`netstat -f inet -nr |grep default|head -1|awk '{print $NF}'`
 else

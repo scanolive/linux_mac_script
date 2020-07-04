@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 #encoding=utf-8
+
+#################################################
+#
+#   File Name: send_mail_sig.py
+#   Author: scan
+#   Created Time: Wed Jul 08 11:19:35 2019
+# 
+#################################################
+
 import sys
 if sys.version_info.major == 2:
     reload(sys)

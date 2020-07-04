@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#################################################
+#
+#   File Name: mac_shadowsocket.sh
+#   Author: scan
+#   Created Time: Wed Jul 06 15:26:15 2019
+# 
+#################################################
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/Users/rill/bin:/usr/local/bin"
 ss_local_cmd=`which ss-local`

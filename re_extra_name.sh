@@ -1,4 +1,13 @@
 #!/bin/bash
+
+#################################################
+#
+#   File Name: re_extra_name.sh
+#   Author: scan
+#   Created Time: Wed Jul 27 16:37:25 2019
+# 
+#################################################
+
 function re_extra_name()
 {
 	IFS_OLD=$IFS

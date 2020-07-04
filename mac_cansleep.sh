@@ -1,5 +1,14 @@
 #!/bin/bash
-#by scan
+
+#################################################
+#
+#   File Name: mac_cansleep.sh
+#   Author: scan
+#   Created Time: Wed Jul 28 11:39:12 2019
+# 
+#################################################
+
+
 if [[ `ps -ef|grep caffeinate|wc -l` -gt 1 ]];then
 	  killall caffeinate
 fi	  

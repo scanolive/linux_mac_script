@@ -4,7 +4,7 @@
 #
 #   File Name: trim_string.sh
 #   Author: scan
-#   Created Time: Tue Nov 26 15:54:32 2019
+#   Created Time: 2019-08-03 17:19:03
 # 
 #################################################
 

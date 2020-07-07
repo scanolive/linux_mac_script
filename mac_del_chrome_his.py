@@ -4,7 +4,7 @@
 #
 #   File Name: mac_del_chrome_his.py
 #   Author: scan
-#   Created Time: Wed Mar 13 13:35:49 2019
+#   Created Time: 2019-07-27 12:03:32
 # 
 #################################################
 

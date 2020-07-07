@@ -4,7 +4,7 @@
 #
 #   File Name: mac_wifi.sh
 #   Author: scan
-#   Created Time: Wed Jul 23 17:35:32 2019
+#   Created Time: 2019-07-23 15:35:14
 # 
 #################################################
 

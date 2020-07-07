@@ -4,7 +4,7 @@
 #
 #   File Name: mac_dns.sh
 #   Author: scan
-#   Created Time: Wed Jul 23 12:32:23 2019
+#   Created Time: 2019-07-24 14:07:13
 # 
 #################################################
 

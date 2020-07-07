@@ -4,7 +4,7 @@
 #
 #   File Name: mac_now_status.sh
 #   Author: scan
-#   Created Time: Wed Jul 17 21:13:23 2019
+#   Created Time: 2019-07-30 09:46:33
 # 
 #################################################
 

@@ -4,7 +4,7 @@
 #
 #   File Name: mac_shutdown.sh
 #   Author: scan
-#   Created Time: Wed Jul 12 17:32:53 2019
+#   Created Time: 2019-08-02 16:30:03
 # 
 #################################################
 

@@ -4,7 +4,7 @@
 #
 #   File Name: mac_shadowsocket.sh
 #   Author: scan
-#   Created Time: Wed Jul 06 15:26:15 2019
+#   Created Time: 2019-07-13 15:03:39
 # 
 #################################################
 

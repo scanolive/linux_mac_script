@@ -5,7 +5,7 @@
 #
 #   File Name: url2qrcode.py
 #   Author: scan
-#   Created Time: Wed Aug 31 10:32:45 2019
+#   Created Time: 2019-07-30 11:53:53
 # 
 #################################################
 

@@ -4,7 +4,7 @@
 #
 #   File Name: mac_image_snap.sh
 #   Author: scan
-#   Created Time: Wed Jul 23 17:19:30 2019
+#   Created Time: 2019-07-13 13:01:08
 # 
 #################################################
 

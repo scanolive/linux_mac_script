@@ -4,7 +4,7 @@
 #
 #   File Name: mac_screen_capture.sh
 #   Author: scan
-#   Created Time: Wed Jul 27 18:43:08 2019
+#   Created Time: 2019-07-27 16:37:03
 # 
 #################################################
 

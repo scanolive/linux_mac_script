@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 #encoding=utf-8
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 #中文显示测试
 
 #################################################
@@ -10,7 +13,6 @@
 # 
 #################################################
 
-AUTH_KEY = 17
 
 def encrypt(s):
     key = AUTH_KEY
@@ -41,7 +43,6 @@ def decrypt(s):
     b = bytearray(n)
     j = 0
     for i in range(0, n):
-        print(i)
         c1 = c[j]
         c2 = c[j + 1]
         j = j + 2
@@ -52,12 +53,16 @@ def decrypt(s):
         b[i] = b1
     return b.decode("utf-8") + "aaaaaaaaaaaaaaaa"
 
-my_str="iloverill_)#_)(_@#$(_@#($_#@(_''''''))))"
+if len(sys.argv) == 3:
+    AUTH_KEY = int(sys.argv[1])
+    my_str = str(sys.argv[2])
+else:
+    print("Usage:"+sys.argv[0]+" key(1-256) str")
+    sys.exit(0)
 
 e_str = encrypt(my_str)
-print(e_str)
+print("str_in: "+e_str)
 
 d_str = decrypt(e_str)
-print(d_str)
+print("str_out: "+d_str)
 
-print(decrypt(b'+-*-D,3,@,:,.,@,/,3,@,/,:,>,H,A,=,;+=,+./-=,;+=,+-*-D,3,@,:,@,+->,'))

@@ -85,20 +85,26 @@ EOF
 
 function dcode_ssr()
 {
-#	sub_url="https://ss.remang.cn/link/msyu6F5GDwkPmoyC"
-#	wget -O '/tmp/ssr.txt' $sub_url
+	sub_url=$1
+	wget -O '/tmp/ssr.txt' $sub_url
 	for str in `cat /tmp/ssr.txt |base64 -D`
 	do
 		node_txt=`echo $str|sed 's/ssr:\/\///g'`
 		check_node $node_txt
 	done
 }
+
+if [[ $# -eq 0  ]];then
+	echo "Usage:sh $0 url"
+	exit 1
+fi
+
 alive_ip_arr=()
 down_ip_arr=()
 min_delay=300
 min_delay_ip=""
 
-dcode_ssr
+dcode_ssr $1
 
 echo "--------alive_ip--------"
 echo ${alive_ip_arr[@]}|tr " " "\n"

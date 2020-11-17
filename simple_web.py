@@ -9,26 +9,32 @@
 # 
 #################################################
 
-
 import os
 import sys
 import time
 import datetime
 import atexit
 import socket
-import http.server
-import socketserver
 import threading
 import argparse
 from signal import SIGTERM
+if sys.version_info.major == 2:
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
+    import SimpleHTTPServer as http_server
+    import SocketServer as socketserver
+else:
+    import http.server as http_server
+    import socketserver
 
 DATE_STR=datetime.datetime.now().strftime('%Y%m%d%H%M%S')
+BNAME=os.path.basename(sys.argv[0]).replace(".py","")
 HOME_DIR = sys.path[0] + '/'
-LOG_DIR = '/tmp/'
+LOG_DIR = '/Users/rill/logs/'
 if not os.path.isdir(LOG_DIR):
     LOG_DIR = HOME_DIR
-LOG_FILE = LOG_DIR + 'tmp_web.log'
-PIDFILE = LOG_DIR + 'tmp_web.pid'
+LOG_FILE = LOG_DIR + BNAME + '.log'
+PIDFILE = LOG_DIR + BNAME + '.pid'
 PORT = 80
 WEBDIR = os.getcwd()
 HELP_MSG='[-h HELP] [-p PORT] [-d DIR] [-l LOGFILE] {start,stop,restart}'
@@ -45,14 +51,14 @@ def getArgs():
     return vars(args)
 
 class Daemon:
-    def __init__(self,pidfile,homedir,stderr=LOG_FILE, stdout=LOG_FILE, stdin='/dev/null'):
+    def __init__(self,pidfile,homedir, stderr=LOG_FILE,stdout=LOG_FILE, stdin='/dev/null'):
         self.stdin = stdin
         self.stdout = stdout
         self.stderr = stderr
         self.pidfile = pidfile
         self.homedir = homedir
 
-    def    daemonize(self):
+    def daemonize(self):
         try:
             if os.fork() > 0:
                 os._exit(0)
@@ -73,7 +79,6 @@ class Daemon:
         os.dup2(so.fileno(), sys.stdout.fileno())
         os.dup2(se.fileno(), sys.stderr.fileno())
 
-
         try:
             pid = os.fork()
             if pid > 0:
@@ -84,10 +89,11 @@ class Daemon:
         atexit.register(self.delpid)
         pid = str(os.getpid())
         open(self.pidfile,'w+').write("%s\n" % pid)
+
     def delpid(self):
         os.remove(self.pidfile)
 
-    def    start(self):
+    def start(self):
         try:
             pf = open(self.pidfile,'r')
             pid = int(pf.read().strip())
@@ -95,12 +101,26 @@ class Daemon:
         except IOError:
             pid = None
         if pid:
-            message = "Start error,pidfile %s already exist. Daemon already running?\n"
-            sys.stderr.write(message % self.pidfile)
+            message = "Start error,pidfile %s already exist. %s running?\n"
+            sys.stderr.write(message % (self.pidfile,BNAME))
             sys.exit(1)
-                
+
+        def port_is_used(port,ip='127.0.0.1'):
+            s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+            try:
+                s.connect((ip,port))
+                s.shutdown(2)
+                return True
+            except:
+                return False
+        port_use = port_is_used(PORT)
+
+	if port_use:
+            sys.stderr.write("port %s already in use\n" % PORT)
+            sys.exit(1)
+
         self.daemonize()
-        self.run()
+        self.run()        
 
     def stop(self):
         try:
@@ -110,7 +130,7 @@ class Daemon:
         except IOError:
             pid = None
         if not pid:
-            message = "pidfile %s does not exist. osa Daemon not running?\n"
+            message = "pidfile %s does not exist. tmp_web not running?\n"
             sys.stderr.write(message % self.pidfile)
             return
         try:
@@ -124,6 +144,7 @@ class Daemon:
                     os.remove(self.pidfile)
             else:
                 sys.exit(1)
+
     def restart(self):
         self.stop()
         self.start()
@@ -132,23 +153,21 @@ class Daemon:
         pass
 
 def web_do():
-    class Handler(http.server.SimpleHTTPRequestHandler):
+    class Handler(http_server.SimpleHTTPRequestHandler):
         def translate_path(self,path):
             if os.path.isdir(WEBDIR):
                 os.chdir(WEBDIR)
-            return http.server.SimpleHTTPRequestHandler.translate_path(self,path)
+            return http_server.SimpleHTTPRequestHandler.translate_path(self,path)
     try:
         httpd = socketserver.TCPServer(("",PORT),Handler)
         httpd.serve_forever()
-    except:
+    except Exception as e:
+        print(str(e))
         pass
-
 
 class My_daemon(Daemon):
     def run(self):
         web_do()
-
-
 
 if __name__ == '__main__':
     if sys.argv[-1] in ['start','stop','restart']:

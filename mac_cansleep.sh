@@ -11,7 +11,7 @@
 
 if [[ `ps -ef|grep caffeinate|wc -l` -gt 1 ]];then
 	  killall caffeinate
-fi	  
+fi
 
 sudo pmset -a  standbydelay 10800
 sudo pmset -a  standby 1
